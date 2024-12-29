@@ -2,6 +2,9 @@ name: Terraform Create EC2 Instance
 
 on:
   workflow_dispatch:  # Allow manual triggering of the workflow
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
   terraform:
