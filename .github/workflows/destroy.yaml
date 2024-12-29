@@ -11,6 +11,9 @@ on:
         description: 'Specific resource to destroy (e.g., aws_instance.my_instance)'
         required: false
         default: 'aws_instance.my_instance'
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
   terraform:
