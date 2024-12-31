@@ -1,9 +1,9 @@
 provider "aws" {
-  region = "ap-south-1"  # Change this to your preferred AWS region
+  region = "ap-south-1"
 }
 
 resource "aws_instance" "my_instance" {
-  ami           = "ami-053b12d3152c0cc71"  # Replace with your AMI ID
+  ami           = "ami-053b12d3152c0cc71" 
   instance_type = "t2.micro"
 
   tags = {
