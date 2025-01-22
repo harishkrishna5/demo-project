@@ -2,15 +2,6 @@ name: Terraform Destroy EC2 Instance
 
 on:
   workflow_dispatch: 
-    inputs:
-      destroy_all:
-        description: 'Should we destroy all resources?'
-        required: false
-        default: 'false'
-      resource:
-        description: 'Specific resource to destroy (e.g., aws_instance.my_instance)'
-        required: false
-        default: 'aws_instance.my_instance'
 permissions:
   contents: read
   id-token: write
@@ -46,10 +37,5 @@ jobs:
       # Destroy specific resource or all resources
       - name: Terraform Destroy
         run: |
-          if [ "${{ github.event.inputs.destroy_all }}" == "true" ]; then
-            echo "Destroying all resources..."
-            terraform destroy -auto-approve
-          else
-            echo "Destroying specific resource: ${{ github.event.inputs.resource }}"
-            terraform destroy -target=${{ github.event.inputs.resource }} -auto-approve
-          fi
+         terraform destroy -auto-approve
+        
