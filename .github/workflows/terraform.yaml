@@ -26,7 +26,7 @@ jobs:
           pip install checkov
 
       - name: Run Checkov scan
-        run: checkov -d
+        run: checkov -d .
 
       # Set up Terraform
       - name: Set up Terraform
