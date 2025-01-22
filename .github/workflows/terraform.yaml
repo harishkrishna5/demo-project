@@ -48,8 +48,13 @@ jobs:
 
       # Terraform Plan 
       - name: Terraform Plan
-        run: terraform plan
+        run: |
+          cd ./
+          terraform plan
+        
 
       # Terraform Apply to create EC2 instance
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: |
+          cd ./
+          terraform apply -auto-approve
